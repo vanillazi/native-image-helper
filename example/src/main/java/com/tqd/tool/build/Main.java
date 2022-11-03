@@ -1,7 +1,10 @@
 package com.tqd.tool.build;
 
 import com.google.gson.GsonBuilder;
+import org.apache.commons.beanutils.ConvertUtilsBean;
+import org.apache.commons.beanutils.Converter;
 
+import java.util.HashMap;
 import java.util.stream.Stream;
 
 public class Main {
@@ -20,5 +23,33 @@ public class Main {
         var personA=(PersonA)object;
         System.out.println(personA.getName()+"-->"+personA.getAge());
         System.out.println(gson.toJson(object));
+    }
+
+
+    public void test1() throws NoSuchFieldException, IllegalAccessException {
+        var s="""
+                        <reflectionConfig>
+                                                           <name>%s</name>
+                                                           <allDeclaredConstructors>true</allDeclaredConstructors>
+                                                           <allPublicConstructors>true</allPublicConstructors>
+                                                           <allDeclaredFields>true</allDeclaredFields>
+                                                           <allPublicFields>true</allPublicFields>
+                                                           <fields>
+                                                           <field>
+                                                             <name>length</name>
+                                                             <allowUnsafeAccess>true</allowUnsafeAccess>
+                                                           </field>
+                                                           </fields>
+                                                       </reflectionConfig>
+                """;
+        var cu=new ConvertUtilsBean();
+        var cf=ConvertUtilsBean.class.getDeclaredField("converters");
+        cf.setAccessible(true);
+        HashMap<Class<?>, Converter> cs= (HashMap<Class<?>, Converter>) cf.get(cu);
+        cs.keySet().forEach(c->{
+            if(c.getCanonicalName().contains("[]")) {
+                System.out.println(s.formatted(c.getCanonicalName()));
+            }
+        });
     }
 }

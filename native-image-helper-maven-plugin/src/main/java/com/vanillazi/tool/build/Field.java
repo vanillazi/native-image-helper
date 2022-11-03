@@ -20,4 +20,8 @@ public class Field {
     @Parameter
     @Nullable
     private Boolean allowUnsafeAccess;
+
+    public Field() {
+
+    }
 }

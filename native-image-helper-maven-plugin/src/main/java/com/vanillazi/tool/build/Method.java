@@ -17,4 +17,8 @@ public class Method {
     @Parameter
     @Nullable
     private List<String> parameterTypes;
+
+    public Method() {
+
+    }
 }

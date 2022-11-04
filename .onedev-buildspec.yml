@@ -1,0 +1,28 @@
+version: 18
+jobs:
+- name: cc
+  jobExecutor: maven-jdk11-builder
+  steps:
+  - !CheckoutStep
+    name: cc
+    cloneCredential: !DefaultCredential {}
+    withLfs: false
+    withSubmodules: false
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  - !CommandStep
+    name: deploy
+    runInContainer: false
+    interpreter: !DefaultInterpreter
+      commands:
+      - mvn clean compile package deploy -U
+    useTTY: false
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  triggers:
+  - !BranchUpdateTrigger
+    branches: main
+  retryCondition: never
+  maxRetries: 3
+  retryDelay: 30
+  cpuRequirement: 250
+  memoryRequirement: 256
+  timeout: 3600

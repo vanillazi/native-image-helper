@@ -2,7 +2,6 @@ package com.vanillazi.tool.build;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.mageddo.aptools.IoUtils;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -13,8 +12,6 @@ import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
 
 import javax.annotation.Nonnull;
-import javax.annotation.processing.ProcessingEnvironment;
-import javax.tools.StandardLocation;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;

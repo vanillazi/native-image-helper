@@ -18,5 +18,14 @@
         <module>native-image-helper-maven-plugin</module>
         <module>example</module>
     </modules>
-
+    <distributionManagement>
+        <repository>
+            <id>vanillazi</id>
+            <url>https://repo.vanillazi.cn/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>vanillazi</id>
+            <url>https://repo.vanillazi.cn/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>

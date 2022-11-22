@@ -13,10 +13,10 @@ public class ReflectionConfig {
     private String name;
     @Parameter
     @Nullable
-    private Boolean allDeclaredConstructors;
+    private Boolean allDeclaredConstructors=true;
     @Parameter
     @Nullable
-    private Boolean allPublicConstructors;
+    private Boolean allPublicConstructors=true;
     @Parameter
     @Nullable
     private Boolean allDeclaredMethods;
@@ -25,10 +25,10 @@ public class ReflectionConfig {
     private Boolean allPublicMethods;
     @Parameter
     @Nullable
-    private Boolean allPublicFields;
+    private Boolean allPublicFields=true;
     @Parameter
     @Nullable
-    private Boolean allDeclaredFields;
+    private Boolean allDeclaredFields=true;
     @Parameter
     @Nullable
     private Boolean allDeclaredClasses;

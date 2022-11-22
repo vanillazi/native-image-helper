@@ -47,7 +47,7 @@ public class ReflectionConfigGeneratorMojo extends AbstractMojo {
                 config.getGroupId(),
                 config.getArtifactId());
         if(path.toFile().exists() || path.toFile().mkdirs()){
-            var file=Path.of(path.toString(),"reflect.json");
+            var file=Path.of(path.toString(),"reflect-config.json");
             var content=gson.toJson(config.getReflectionConfigs());
             StandardOpenOption options;
             if(file.toFile().exists()){
@@ -77,7 +77,7 @@ public class ReflectionConfigGeneratorMojo extends AbstractMojo {
             }
         }
         try (Writer nativeImagePropsWriter = new FileWriter(file)){
-            nativeImagePropsWriter.append("Args=-H:ReflectionConfigurationResources=${.}/reflect.json\n");
+            nativeImagePropsWriter.append("Args=-H:ReflectionConfigurationResources=${.}/reflect-config.json\n");
         } catch (Throwable e){
             throw new RuntimeException("",e);
         }

@@ -1,4 +1,4 @@
-package com.vanillazi.tool.build;
+package cn.vanillazi.tool.build;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -19,7 +19,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-import java.rmi.RemoteException;
 import java.util.List;
 
 @Mojo(name = "generate",defaultPhase = LifecyclePhase.COMPILE)

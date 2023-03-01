@@ -1,4 +1,4 @@
-package com.vanillazi.tool.build;
+package cn.vanillazi.tool.build;
 
 import org.apache.maven.plugins.annotations.Parameter;
 

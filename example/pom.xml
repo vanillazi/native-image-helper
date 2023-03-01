@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>native-image-helper</artifactId>
-        <groupId>com.tqd.tool.build</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <groupId>cn.vanillazi.tool.build</groupId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>example</artifactId>
 
     <properties>
-        <mainClass>com.tqd.tool.build.Main</mainClass>
+        <mainClass>cn.vanillazi.tool.build.Main</mainClass>
         <maven.install.skip>true</maven.install.skip>
         <maven.deploy.skip>true</maven.deploy.skip>
     </properties>
@@ -39,9 +39,9 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>com.vanillazi.tool.build</groupId>
+                        <groupId>cn.vanillazi.tool.build</groupId>
                         <artifactId>native-image-helper-maven-plugin</artifactId>
-                        <version>1.0-SNAPSHOT</version>
+                        <version>0.0.1-SNAPSHOT</version>
                         <configuration>
                             <generatorConfigs>
                                 <generatorConfig>
@@ -49,18 +49,10 @@
                                     <artifactId>${project.artifactId}</artifactId>
                                     <reflectionConfigs>
                                         <reflectionConfig>
-                                            <name>com.tqd.tool.build.PersonA</name>
-                                            <allDeclaredConstructors>true</allDeclaredConstructors>
-                                            <allPublicConstructors>true</allPublicConstructors>
-                                            <allDeclaredFields>true</allDeclaredFields>
-                                            <allPublicFields>true</allPublicFields>
+                                            <name>cn.vanillazi.tool.build.PersonA</name>
                                         </reflectionConfig>
                                         <reflectionConfig>
-                                            <name>com.tqd.tool.build.Person</name>
-                                            <allDeclaredConstructors>true</allDeclaredConstructors>
-                                            <allPublicConstructors>true</allPublicConstructors>
-                                            <allDeclaredFields>true</allDeclaredFields>
-                                            <allPublicFields>true</allPublicFields>
+                                            <name>cn.vanillazi.tool.build.Person</name>
                                         </reflectionConfig>
                                     </reflectionConfigs>
                                 </generatorConfig>
@@ -79,7 +71,7 @@
                     <plugin>
                         <groupId>org.graalvm.buildtools</groupId>
                         <artifactId>native-maven-plugin</artifactId>
-                        <version>0.9.16</version>
+                        <version>0.9.20</version>
                         <extensions>true</extensions>
                         <executions>
                             <execution>

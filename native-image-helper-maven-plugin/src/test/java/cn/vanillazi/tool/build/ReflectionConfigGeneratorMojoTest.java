@@ -1,18 +1,16 @@
-package com.vanillazi.tool.build;
+package cn.vanillazi.tool.build;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class ReflectionConfigGeneratorMojoTest {
 
     @Test
     public void test(){
         GeneratorConfig config=new GeneratorConfig();
-        config.setGroupId("com.tqd.tool");
+        config.setGroupId("cn.vanillazi.tool");
         config.setArtifactId("native-image-helper-maven-plugin");
         List<ReflectionConfig> cfgs=new ArrayList<>();
         var rc=new ReflectionConfig();

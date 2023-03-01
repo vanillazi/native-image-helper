@@ -5,16 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>native-image-helper</artifactId>
-        <groupId>com.tqd.tool.build</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <groupId>cn.vanillazi.tool.build</groupId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.vanillazi.tool.build</groupId>
     <artifactId>native-image-helper-maven-plugin</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.version>3.8.6</maven.version>
         <slf4j.version>2.0.3</slf4j.version>
         <junit.version>5.9.0</junit.version>

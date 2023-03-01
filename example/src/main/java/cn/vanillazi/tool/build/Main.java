@@ -1,4 +1,4 @@
-package com.tqd.tool.build;
+package cn.vanillazi.tool.build;
 
 import com.google.gson.GsonBuilder;
 

@@ -1,4 +1,4 @@
-version: 18
+version: 20
 jobs:
 - name: cc
   jobExecutor: maven-jdk11-builder
@@ -23,6 +23,19 @@ jobs:
   retryCondition: never
   maxRetries: 3
   retryDelay: 30
-  cpuRequirement: 250
-  memoryRequirement: 256
+  timeout: 3600
+- name: github-sync
+  jobExecutor: local-server-executor
+  steps:
+  - !PushRepository
+    name: github-sync
+    remoteUrl: https://github.com/vanillazi/native-image-helper.git
+    userName: vanillazi
+    passwordSecret: vanillazi-github-sync
+    withLfs: false
+    force: false
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  retryCondition: never
+  maxRetries: 3
+  retryDelay: 30
   timeout: 3600
